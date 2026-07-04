@@ -70,6 +70,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // Sticky in-page section nav: highlight the section currently in view
 const sectionNavLinks = document.querySelectorAll('.section-nav a');
 if (sectionNavLinks.length && 'IntersectionObserver' in window) {
+  const navIndicator = document.querySelector('.nav-indicator');
+  const moveIndicator = (link) => {
+    if (!navIndicator || !link) return;
+    const wrapRect = link.parentElement.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    navIndicator.style.width = linkRect.width + 'px';
+    navIndicator.style.transform = `translateX(${linkRect.left - wrapRect.left}px)`;
+  };
+
   const sectionMap = new Map();
   sectionNavLinks.forEach(a => {
     const target = document.getElementById(a.getAttribute('href').slice(1));
@@ -82,7 +91,13 @@ if (sectionNavLinks.length && 'IntersectionObserver' in window) {
       if (!link) return;
       sectionNavLinks.forEach(a => a.classList.remove('active'));
       link.classList.add('active');
+      moveIndicator(link);
     });
   }, { rootMargin: '-30% 0px -60% 0px' });
   sectionMap.forEach((link, section) => navObserver.observe(section));
+
+  window.addEventListener('resize', () => {
+    const active = document.querySelector('.section-nav a.active');
+    if (active) moveIndicator(active);
+  });
 }

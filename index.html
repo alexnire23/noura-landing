@@ -105,6 +105,7 @@
     <a href="#como-funciona">Cómo funciona</a>
     <a href="#diferencia">¿Por qué Noura?</a>
     <a href="#faq">Preguntas</a>
+    <span class="nav-indicator" aria-hidden="true"></span>
   </div>
 </nav>
 
@@ -140,12 +141,12 @@
     <p class="sec-eyebrow reveal">¿Por qué Noura?</p>
     <h2 class="reveal slide-right">Desde tu casa, no desde el pasillo del supermercado.</h2>
     <div class="vs-grid">
-      <div class="vs-card them reveal">
+      <div class="vs-card them reveal slide-left">
         <span class="label">Apps de escaneo</span>
         <h3>Reaccionan producto a producto</h3>
         <p>Escaneas un envase en la tienda y recibes una nota al momento, con el carro parado en mitad del pasillo. Para saber cuál es la mejor opción de la categoría, tienes que escanear producto a producto y comparar tú mismo cada nota.</p>
       </div>
-      <div class="vs-card us reveal">
+      <div class="vs-card us reveal slide-right">
         <span class="label">Noura</span>
         <h3>Decide toda la compra antes de salir</h3>
         <p>Subes tu lista completa desde casa y llegas al supermercado sabiendo exactamente qué coger en cada categoría. Si compras online, sabes directamente qué producto buscar en la web del supermercado. La compra deja de ser una sucesión de microdecisiones.</p>
@@ -267,7 +268,7 @@ const items = document.querySelectorAll('.list-item');
 const reco = document.querySelector('.reco');
 const rejected = document.querySelector('.rejected');
 
-function renderDemo(i){
+function applyDemo(i){
   const d = demoData[i];
   items.forEach(el => {
     el.classList.toggle('active', el.textContent.trim() === d.item);
@@ -288,6 +289,17 @@ function renderDemo(i){
   }
   rejected.querySelector('.name').textContent = d.rejName;
   rejected.querySelector('.why').textContent = d.rejWhy;
+}
+
+function renderDemo(i){
+  if (prefersReduced) { applyDemo(i); return; }
+  reco.classList.add('fading');
+  rejected.classList.add('fading');
+  setTimeout(() => {
+    applyDemo(i);
+    reco.classList.remove('fading');
+    rejected.classList.remove('fading');
+  }, 220);
 }
 
 let demoTimer = null;
