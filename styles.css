@@ -127,10 +127,15 @@ h1 .accent{color:var(--sage)}
 
 /* ---------- Demo card ---------- */
 .demo-eyebrow{
+  position:relative;
   font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--sage);
-  border-top:1px solid var(--line);padding-top:22px;margin-bottom:14px;
+  padding-top:22px;margin-bottom:14px;
   display:none;
+}
+.demo-eyebrow::before{
+  content:"";position:absolute;top:0;left:50%;width:100vw;
+  transform:translateX(-50%);border-top:2px solid var(--sage);
 }
 @media(max-width:900px){.demo-eyebrow{display:block}}
 .demo{
