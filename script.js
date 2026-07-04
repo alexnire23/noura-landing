@@ -35,6 +35,20 @@ if (navToggle && drawer && drawerOverlay) {
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 }
 
+// Scroll to same-page anchors without writing #hash to the URL, so a
+// refresh (or pull-to-refresh) always lands back at the top of the page
+// instead of wherever the last clicked anchor was.
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  const id = a.getAttribute('href').slice(1);
+  if (!id) return;
+  a.addEventListener('click', (e) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+  });
+});
+
 // Sticky in-page section nav: highlight the section currently in view
 const sectionNavLinks = document.querySelectorAll('.section-nav a');
 if (sectionNavLinks.length && 'IntersectionObserver' in window) {
