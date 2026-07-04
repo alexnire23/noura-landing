@@ -138,6 +138,12 @@ h1 .struck::after{
   font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--forest);opacity:.7;display:block;margin-bottom:6px;
 }
+.reco-top{display:flex;gap:12px;align-items:center}
+.reco-img{
+  width:56px;height:56px;border-radius:10px;object-fit:cover;flex:none;
+  border:1px solid var(--line);background:#fff;
+}
+.reco-top .reco-text{flex:1;min-width:0}
 .reco .name{font-weight:600;color:var(--dark);margin-bottom:8px}
 .reco .ing{
   font-family:var(--mono);font-size:.76rem;line-height:1.7;color:var(--forest);
@@ -376,19 +382,24 @@ footer .logo{color:var(--cream)}
       </div>
       <div class="list-item"><span class="dot"></span>tomate frito</div>
       <div class="list-item active"><span class="dot"></span>yogur natural</div>
-      <div class="list-item"><span class="dot"></span>pan de molde</div>
+      <div class="list-item"><span class="dot"></span>mantequilla</div>
 
       <div class="reco">
-        <span class="tag">Cógelo: pasillo de yogures</span>
-        <p class="name">Yogur natural Hacendado, vaso de vidrio (4 x 125 g)</p>
-        <p class="ing">ingredientes: leche pasteurizada, fermentos lácticos</p>
-        <p class="why"><strong>Por qué:</strong> dos ingredientes que reconocerías en cualquier cocina. Sin edulcorantes, sin almidones, sin aromas.</p>
-        <p class="alt"><strong>Alternativa:</strong> Yogur natural de cabra Hacendado (2 x 125 g).</p>
+        <div class="reco-top">
+          <img class="reco-img" src="yogur-griego.png" alt="Yogur griego natural Hacendado">
+          <div class="reco-text">
+            <span class="tag">Cógelo: pasillo de yogures</span>
+            <p class="name">Yogur griego natural Hacendado</p>
+          </div>
+        </div>
+        <p class="ing">ingredientes: leche fresca pasteurizada entera, nata, leche en polvo desnatada, fermentos lácticos</p>
+        <p class="why"><strong>Por qué:</strong> ingredientes reconocibles, sin edulcorantes ni aromas artificiales.</p>
+        <p class="alt" hidden></p>
       </div>
 
       <div class="rejected">
-        <p class="name">Yogur proteico 0% sabor vainilla</p>
-        <p class="why">Descartado: edulcorantes artificiales y aromas. El «0%» no puntúa.</p>
+        <p class="name">Yogur con frutas Hacendado</p>
+        <p class="why">Descartado: jarabe de fructosa y glucosa, zumos concentrados y aromas artificiales.</p>
       </div>
     </div>
   </div>
@@ -409,7 +420,7 @@ footer .logo{color:var(--cream)}
       <div class="step reveal">
         <span class="num">2</span>
         <h3>Sube tu lista</h3>
-        <p>Escribe o pega los productos que necesitas, tal y como los apuntarías en un papel: «yogur, tomate frito, pan de molde».</p>
+        <p>Escribe o pega los productos que necesitas, tal y como los apuntarías en un papel: «yogur, tomate frito, mantequilla».</p>
       </div>
       <div class="step reveal">
         <span class="num">3</span>
@@ -609,33 +620,33 @@ if (!prefersReduced && 'IntersectionObserver' in window) {
 const demoData = [
   {
     item: 'yogur natural',
+    img: 'yogur-griego.png',
     tag: 'Cógelo: pasillo de yogures',
-    name: 'Yogur natural Hacendado, vaso de vidrio (4 x 125 g)',
-    ing: 'ingredientes: leche pasteurizada, fermentos lácticos',
-    why: '<strong>Por qué:</strong> dos ingredientes que reconocerías en cualquier cocina. Sin edulcorantes, sin almidones, sin aromas.',
-    alt: '<strong>Alternativa:</strong> Yogur natural de cabra Hacendado (2 x 125 g).',
-    rejName: 'Yogur proteico 0% sabor vainilla',
-    rejWhy: 'Descartado: edulcorantes artificiales y aromas. El «0%» no puntúa.'
+    name: 'Yogur griego natural Hacendado',
+    ing: 'ingredientes: leche fresca pasteurizada entera, nata, leche en polvo desnatada, fermentos lácticos',
+    why: '<strong>Por qué:</strong> ingredientes reconocibles, sin edulcorantes ni aromas artificiales.',
+    rejName: 'Yogur con frutas Hacendado',
+    rejWhy: 'Descartado: jarabe de fructosa y glucosa, zumos concentrados y aromas artificiales.'
   },
   {
     item: 'tomate frito',
+    img: 'tomate-frito.png',
     tag: 'Cógelo: pasillo de salsas',
-    name: 'Tomate frito con aceite de oliva Hacendado, frasco 300 g',
-    ing: 'ingredientes: tomate, aceite de oliva, cebolla, sal',
-    why: '<strong>Por qué:</strong> receta de cocina, sin azúcares añadidos innecesarios ni almidones modificados.',
-    alt: '<strong>Alternativa:</strong> Tomate triturado natural Hacendado, 400 g, para hacerlo en casa.',
-    rejName: 'Tomate frito clásico en brik',
-    rejWhy: 'Descartado: aceite de girasol refinado y jarabe de glucosa.'
+    name: 'Tomate frito Hida',
+    ing: 'ingredientes: tomate, aceite de oliva virgen extra, azúcar, sal',
+    why: '<strong>Por qué:</strong> tomate real con aceite de oliva virgen extra, sin aceites refinados.',
+    rejName: 'Tomate frito Hacendado',
+    rejWhy: 'Descartado: lleva aceite de girasol.'
   },
   {
-    item: 'pan de molde',
-    tag: 'Cógelo: pasillo de panadería',
-    name: 'Pan de molde con masa madre Hacendado, 480 g',
-    ing: 'ingredientes: harina de trigo, agua, masa madre, sal',
-    why: '<strong>Por qué:</strong> los cuatro ingredientes de un pan de verdad. Sin conservantes ni grasas añadidas.',
-    alt: '<strong>Alternativa:</strong> hogaza de pan rústico de la sección de panadería.',
-    rejName: 'Pan de molde 0% azúcares añadidos',
-    rejWhy: 'Descartado: aceite de semillas, emulgentes y conservantes. La promesa del envase no puntúa.'
+    item: 'mantequilla',
+    img: 'mantequilla.png',
+    tag: 'Cógelo: pasillo de mantequillas y margarinas',
+    name: 'Mantequilla sin sal añadida Hacendado',
+    ing: 'ingredientes: nata pasteurizada (leche), fermentos lácticos (leche). Origen de la leche: España',
+    why: '<strong>Por qué:</strong> solo nata y fermentos de leche, sin aceites ni grasas vegetales.',
+    rejName: 'Margarina',
+    rejWhy: 'Descartado: aceites vegetales y grasas vegetales en vez de nata de leche.'
   }
 ];
 let demoIdx = 0;
@@ -648,11 +659,20 @@ function renderDemo(i){
   items.forEach(el => {
     el.classList.toggle('active', el.textContent.trim() === d.item);
   });
+  const altEl = reco.querySelector('.alt');
+  reco.querySelector('.reco-img').src = d.img;
+  reco.querySelector('.reco-img').alt = d.name;
   reco.querySelector('.tag').textContent = d.tag;
   reco.querySelector('.name').textContent = d.name;
   reco.querySelector('.ing').textContent = d.ing;
   reco.querySelector('.why').innerHTML = d.why;
-  reco.querySelector('.alt').innerHTML = d.alt;
+  if (d.alt) {
+    altEl.innerHTML = d.alt;
+    altEl.hidden = false;
+  } else {
+    altEl.innerHTML = '';
+    altEl.hidden = true;
+  }
   rejected.querySelector('.name').textContent = d.rejName;
   rejected.querySelector('.why').textContent = d.rejWhy;
 }
