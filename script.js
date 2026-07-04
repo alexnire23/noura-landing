@@ -34,3 +34,23 @@ if (navToggle && drawer && drawerOverlay) {
   drawerOverlay.addEventListener('click', closeDrawer);
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 }
+
+// Sticky in-page section nav: highlight the section currently in view
+const sectionNavLinks = document.querySelectorAll('.section-nav a');
+if (sectionNavLinks.length && 'IntersectionObserver' in window) {
+  const sectionMap = new Map();
+  sectionNavLinks.forEach(a => {
+    const target = document.getElementById(a.getAttribute('href').slice(1));
+    if (target) sectionMap.set(target, a);
+  });
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const link = sectionMap.get(entry.target);
+      if (!link) return;
+      sectionNavLinks.forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sectionMap.forEach((link, section) => navObserver.observe(section));
+}
