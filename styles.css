@@ -127,7 +127,7 @@ h1 .accent{color:var(--sage)}
 
 /* ---------- Demo card ---------- */
 .demo{
-  background:#FBF7EE;border:1px solid var(--line);border-radius:20px;
+  background:var(--cream-deep);border:1px solid var(--sage);border-radius:20px;
   box-shadow:0 24px 60px -24px rgba(27,48,33,.28);
   padding:26px;position:relative;
 }
@@ -149,7 +149,7 @@ h1 .accent{color:var(--sage)}
 .list-item.active .dot{background:var(--forest)}
 .reco{
   margin-top:16px;background:var(--cream);border:1.5px solid var(--forest);
-  border-radius:14px;padding:18px 18px 16px;
+  border-radius:14px;padding:18px 18px 16px;min-height:230px;
 }
 .reco .tag{
   font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;
@@ -165,7 +165,7 @@ h1 .accent{color:var(--sage)}
 .reco .ing{
   font-family:var(--mono);font-size:.76rem;line-height:1.7;color:var(--forest);
   background:rgba(143,162,146,.14);border-radius:8px;padding:10px 12px;margin-bottom:10px;
-  min-height:3.4em;
+  min-height:5.1em;
 }
 .reco .why{font-size:.85rem;color:var(--ink);opacity:.85;min-height:3.2em}
 .reco .alt{
@@ -174,10 +174,10 @@ h1 .accent{color:var(--sage)}
 }
 .rejected{
   margin-top:12px;border:1px solid var(--line);border-radius:14px;
-  padding:14px 18px;opacity:.75;
+  padding:14px 18px;opacity:.75;min-height:90px;
 }
-.rejected .name{font-weight:500;color:var(--ink);text-decoration:line-through;text-decoration-color:var(--sage);margin-bottom:4px;font-size:.92rem}
-.rejected .why{font-size:.8rem;color:var(--forest)}
+.rejected .name{font-weight:500;color:var(--ink);text-decoration:line-through;text-decoration-color:var(--sage);margin-bottom:4px;font-size:.92rem;min-height:1.5em}
+.rejected .why{font-size:.8rem;color:var(--forest);min-height:2.6em;display:block}
 @media(max-width:900px){
   .hero{padding:56px 0 72px}
   .hero-grid{grid-template-columns:1fr;gap:48px}

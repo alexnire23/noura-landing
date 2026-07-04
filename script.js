@@ -1,3 +1,21 @@
+// On an actual reload (refresh / pull-to-refresh), drop any leftover #hash
+// and jump to the top, instead of honoring a hash left over from a
+// previous in-page scroll. A fresh navigation from another page (e.g. a
+// footer link to "index.html#faq") is not a reload, so it still lands on
+// that section as expected.
+(function(){
+  var navEntries = window.performance && performance.getEntriesByType ? performance.getEntriesByType('navigation') : [];
+  var isReload = (navEntries[0] && navEntries[0].type === 'reload') ||
+    (performance.navigation && performance.navigation.type === 1);
+  if (!isReload || !window.location.hash) return;
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+  window.scrollTo(0, 0);
+  // The browser may still auto-scroll to the (now removed from the URL)
+  // fragment once everything finishes loading, so re-assert the top
+  // position after load too.
+  window.addEventListener('load', () => window.scrollTo(0, 0));
+})();
+
 // Reveal on scroll
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!prefersReduced && 'IntersectionObserver' in window) {
