@@ -232,6 +232,8 @@ h2{
   font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.15;
   letter-spacing:-.015em;color:var(--dark);margin-bottom:18px;max-width:20em;
 }
+.reveal.slide-left{transform:translateX(-32px)}
+.reveal.slide-right{transform:translateX(32px)}
 .sec-lead{font-size:1.08rem;max-width:36em;opacity:.85;margin-bottom:56px}
 
 /* Steps */
