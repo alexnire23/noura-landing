@@ -248,7 +248,8 @@ h2{
   .rule:nth-child(even){padding-left:0}
 }
 
-/* Sofá vs pasillo */
+/* ¿Por qué Noura? */
+#diferencia{background:rgba(143,162,146,.1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:8px}
 .vs-card{border-radius:18px;padding:34px 32px;border:1px solid var(--line)}
 .vs-card.them{background:transparent}
