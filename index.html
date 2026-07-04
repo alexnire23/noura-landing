@@ -677,19 +677,23 @@ function renderDemo(i){
   rejected.querySelector('.why').textContent = d.rejWhy;
 }
 
-if (!prefersReduced) {
-  setInterval(() => {
+let demoTimer = null;
+function startDemoRotation(){
+  if (prefersReduced) return;
+  clearInterval(demoTimer);
+  demoTimer = setInterval(() => {
     demoIdx = (demoIdx + 1) % demoData.length;
     renderDemo(demoIdx);
   }, 5000);
 }
+startDemoRotation();
 
 // Click a list item to see its recommendation
 items.forEach(el => {
   el.style.cursor = 'pointer';
   el.addEventListener('click', () => {
     const idx = demoData.findIndex(d => d.item === el.textContent.trim());
-    if (idx >= 0) { demoIdx = idx; renderDemo(idx); }
+    if (idx >= 0) { demoIdx = idx; renderDemo(idx); startDemoRotation(); }
   });
 });
 </script>
