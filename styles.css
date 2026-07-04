@@ -128,7 +128,8 @@ h1 .accent{color:var(--sage)}
 /* ---------- Demo card ---------- */
 .demo-eyebrow{
   font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--sage);margin-bottom:14px;
+  text-transform:uppercase;color:var(--sage);
+  border-top:1px solid var(--line);padding-top:22px;margin-bottom:14px;
   display:none;
 }
 @media(max-width:900px){.demo-eyebrow{display:block}}
