@@ -419,6 +419,63 @@ footer .logo{color:var(--cream)}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
+/* Menú semanal teaser */
+#menu-semanal{border-top:1px solid var(--line)}
+.menu-teaser{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.menu-teaser-copy .btn{margin-top:8px}
+.menu-teaser-demo{
+  background:var(--cream-deep);border:1px solid var(--line);border-radius:20px;padding:24px;
+}
+.mt-label{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--forest);opacity:.7;display:block;margin-bottom:10px;
+}
+.mt-box{
+  background:var(--cream);border:1px dashed var(--line);border-radius:12px;padding:16px 18px;
+  font-family:var(--mono);font-size:.8rem;line-height:1.9;color:var(--ink);
+}
+.mt-box span{opacity:.75;color:var(--forest)}
+.mt-arrow{
+  text-align:center;font-family:var(--mono);color:var(--forest);opacity:.7;
+  padding:14px 0;font-size:.8rem;letter-spacing:.1em;
+}
+.mt-list{
+  background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+  font-family:var(--mono);font-size:.82rem;color:var(--ink);display:flex;flex-direction:column;gap:10px;
+}
+.mt-list span{display:flex;align-items:center}
+.mt-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);display:inline-block;margin-right:10px;flex:none}
+@media(max-width:900px){.menu-teaser{grid-template-columns:1fr;gap:36px}}
+
+/* App store badges */
+.store-badges{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.store-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--dark);color:var(--cream);border-radius:12px;
+  padding:9px 16px;text-decoration:none;transition:transform .15s,box-shadow .15s;
+}
+a.store-badge:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,48,33,.25)}
+.store-badge-icon{width:22px;height:22px;flex:none}
+.store-badge span{display:flex;flex-direction:column;line-height:1.15}
+.store-badge small{font-size:.62rem;opacity:.8;font-family:var(--body)}
+.store-badge strong{font-family:var(--display);font-size:.98rem;font-weight:600}
+.store-badge-soon{opacity:.55;cursor:default}
+.cta-final .store-badges{justify-content:center;margin-bottom:0}
+
+/* Legal pages (privacidad / términos / eliminar cuenta) */
+.legal-content{max-width:64em}
+.legal-content h3{
+  font-family:var(--display);font-weight:600;font-size:1.15rem;
+  color:var(--dark);margin:34px 0 10px;
+}
+.legal-content h3:first-child{margin-top:0}
+.legal-content p{font-size:.96rem;opacity:.88;margin-bottom:14px}
+.legal-content ul{margin:0 0 14px 20px}
+.legal-content li{font-size:.96rem;opacity:.88;margin-bottom:6px}
+.legal-updated{
+  font-family:var(--mono);font-size:.78rem;color:var(--forest);opacity:.65;margin-bottom:34px;
+}
+
 /* Standalone page hero (método / premium) */
 .page-hero{padding:64px 0 16px}
 .page-hero .sec-eyebrow{margin-bottom:16px}

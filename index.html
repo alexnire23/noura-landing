@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Noura. Elegido por sus ingredientes, pensado para tu salud</title>
-<meta name="description" content="Sube tu lista de la compra y Noura te dice exactamente qué producto elegir en cada categoría de tu supermercado: un recomendado, el motivo y una alternativa. Gratis y sin límites.">
+<meta name="description" content="Sube tu lista de la compra y Noura te dice exactamente qué producto elegir en cada categoría de tu supermercado: un recomendado, el motivo y una alternativa. Gratis, sin anuncios y sin marcas que pagan por aparecer.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,12 +50,23 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Tu compra del supermercado, decidida desde casa</p>
+      <p class="eyebrow">Tu compra del supermercado, decidida desde casa — pensado para familias con poco tiempo</p>
       <h1>Elegido por sus ingredientes.<br>Pensado para tu <span class="accent">salud</span>.</h1>
-      <p class="lead">Sube tu lista de la compra y Noura te dice exactamente qué producto coger en cada categoría: un recomendado, el motivo y una alternativa. Gratis y sin límites.</p>
+      <p class="lead">Sube tu lista de la compra y Noura te dice exactamente qué producto coger en cada categoría: un recomendado, el motivo y una alternativa. Gratis, sin anuncios y sin marcas que pagan por aparecer.</p>
       <div class="hero-ctas">
         <button type="button" class="btn btn-primary">Sube tu lista</button>
         <a class="btn btn-ghost" href="#como-funciona">Ver cómo funciona</a>
+      </div>
+      <!-- Nota: sustituir el href="#" por la ficha real de App Store en cuanto Apple apruebe la app -->
+      <div class="store-badges">
+        <a class="store-badge" href="#" aria-label="Descárgala en el App Store">
+          <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19h15"/></svg>
+          <span><small>Descárgala en</small><strong>App Store</strong></span>
+        </a>
+        <span class="store-badge store-badge-soon" aria-disabled="true">
+          <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19h15"/></svg>
+          <span><small>Próximamente en</small><strong>Google Play</strong></span>
+        </span>
       </div>
       <p class="hero-note">Funciona con Mercadona · Más supermercados, en camino</p>
       <div class="claims" aria-hidden="true">
@@ -103,6 +114,7 @@
 <nav class="section-nav" aria-label="Secciones de la página">
   <div class="wrap">
     <a href="#como-funciona">Cómo funciona</a>
+    <a href="#menu-semanal">Menú semanal</a>
     <a href="#diferencia">¿Por qué Noura?</a>
     <a href="#faq">Preguntas</a>
     <span class="nav-indicator" aria-hidden="true"></span>
@@ -135,6 +147,32 @@
   </div>
 </section>
 
+<!-- MENÚ SEMANAL -->
+<section id="menu-semanal">
+  <div class="wrap menu-teaser">
+    <div class="menu-teaser-copy">
+      <p class="sec-eyebrow reveal">Menú semanal</p>
+      <h2 class="reveal slide-left">¿No sabes ni qué cenar? Genérate la semana.</h2>
+      <p class="sec-lead reveal">Noura te crea un menú semanal sano —14 comidas adaptadas a tu hogar y tu objetivo— y lo convierte directamente en tu lista de la compra. De «no sé qué hacer de cena» a la cesta hecha, en un minuto.</p>
+      <a class="btn btn-ghost reveal" href="premium.html">Descúbrelo en Premium →</a>
+    </div>
+    <div class="menu-teaser-demo reveal slide-right" aria-label="Ejemplo de menú semanal convertido en lista de la compra">
+      <span class="mt-label">Menú de la semana</span>
+      <div class="mt-box">
+        <span>lunes</span> · lentejas con verduras<br>
+        <span>martes</span> · salmón con arroz<br>
+        <span>...</span>
+      </div>
+      <div class="mt-arrow">↓ &nbsp;Tu lista de la compra&nbsp; ↓</div>
+      <div class="mt-list">
+        <span><span class="mt-dot"></span>Lenteja pardina Hacendado</span>
+        <span><span class="mt-dot"></span>Lomos de salmón</span>
+        <span><span class="mt-dot"></span>Arroz redondo Hacendado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- LA DIFERENCIA -->
 <section id="diferencia">
   <div class="wrap">
@@ -160,7 +198,7 @@
   <div class="wrap gratis-inner">
     <div class="reveal">
       <p class="sec-eyebrow">Y todo esto es gratis</p>
-      <p class="big">Tu lista, resuelta producto a producto. Sin límite de usos, sin anuncios, sin marcas que pagan por aparecer.</p>
+      <p class="big">Tu lista, resuelta producto a producto. Sin anuncios, sin marcas que pagan por aparecer.</p>
     </div>
     <button type="button" class="btn btn-primary reveal">Empezar gratis</button>
   </div>
@@ -174,7 +212,7 @@
     <div class="faq-list reveal">
       <details>
         <summary>¿Noura es gratis de verdad?</summary>
-        <p>Sí. La función principal, que es elegir supermercado, subir tu lista y recibir un producto recomendado por cada cosa que necesitas, con su motivo y una alternativa, es gratuita para todo el mundo y sin límite de usos. Las funciones avanzadas, como pedirle a Noura que te genere el menú de la semana con su lista de la compra y su coste estimado, forman parte de una única suscripción mensual.</p>
+        <p>Sí. La función principal, que es elegir supermercado, subir tu lista y recibir un producto recomendado por cada cosa que necesitas, con su motivo y una alternativa, es gratuita para todo el mundo. Las funciones avanzadas, como pedirle a Noura que te genere el menú de la semana con su lista de la compra y su coste estimado, forman parte de una única suscripción mensual.</p>
       </details>
       <details>
         <summary>¿Con qué supermercados funciona?</summary>
@@ -204,7 +242,17 @@
     <img class="reveal" src="logo.png" alt="">
     <h2 class="reveal">Tu próxima compra, ya decidida.</h2>
     <p class="reveal">Sube tu lista ahora y llega al supermercado sabiendo exactamente qué coger.</p>
-    <button type="button" class="btn reveal">Probar Noura gratis</button>
+    <!-- Nota: sustituir el href="#" por la ficha real de App Store en cuanto Apple apruebe la app -->
+    <div class="store-badges reveal">
+      <a class="store-badge" href="#" aria-label="Descárgala en el App Store">
+        <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19h15"/></svg>
+        <span><small>Descárgala en</small><strong>App Store</strong></span>
+      </a>
+      <span class="store-badge store-badge-soon" aria-disabled="true">
+        <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19h15"/></svg>
+        <span><small>Próximamente en</small><strong>Google Play</strong></span>
+      </span>
+    </div>
   </div>
 </section>
 
@@ -220,6 +268,9 @@
         <li><a href="metodo.html">El método</a></li>
         <li><a href="premium.html">Premium</a></li>
         <li><a href="#faq">Preguntas</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
+        <li><a href="terminos.html">Términos</a></li>
+        <li><a href="eliminar-cuenta.html">Eliminar cuenta</a></li>
         <li><a href="https://www.instagram.com/noura.aio/" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.tiktok.com/@noura.aio" target="_blank" rel="noopener">TikTok</a></li>
       </ul>
