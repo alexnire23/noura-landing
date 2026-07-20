@@ -425,7 +425,7 @@ footer .logo{color:var(--cream)}
 .phone-frame{width:220px;margin:0}
 .phone-frame img{
   display:block;width:100%;
-  aspect-ratio:946/1915;object-fit:cover;object-position:bottom;
+  aspect-ratio:946/1853;object-fit:cover;object-position:bottom;
   border-radius:26px;border:6px solid var(--dark);
   box-shadow:0 24px 60px -24px rgba(27,48,33,.35);
 }
