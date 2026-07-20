@@ -419,33 +419,22 @@ footer .logo{color:var(--cream)}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-/* Menú semanal teaser */
+/* Menú semanal teaser + capturas reales de la app */
 #menu-semanal{border-top:1px solid var(--line)}
-.menu-teaser{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.menu-teaser-copy .btn{margin-top:8px}
-.menu-teaser-demo{
-  background:var(--cream-deep);border:1px solid var(--line);border-radius:20px;padding:24px;
+.app-shots{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:48px}
+.phone-frame{width:220px;margin:0}
+.phone-frame img{
+  display:block;width:100%;border-radius:26px;border:6px solid var(--dark);
+  box-shadow:0 24px 60px -24px rgba(27,48,33,.35);
 }
-.mt-label{
-  font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--forest);opacity:.7;display:block;margin-bottom:10px;
+.phone-frame figcaption{
+  margin-top:14px;text-align:center;font-family:var(--mono);font-size:.78rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--forest);opacity:.75;
 }
-.mt-box{
-  background:var(--cream);border:1px dashed var(--line);border-radius:12px;padding:16px 18px;
-  font-family:var(--mono);font-size:.8rem;line-height:1.9;color:var(--ink);
+@media(max-width:700px){
+  .app-shots{gap:18px}
+  .phone-frame{width:42%}
 }
-.mt-box span{opacity:.75;color:var(--forest)}
-.mt-arrow{
-  text-align:center;font-family:var(--mono);color:var(--forest);opacity:.7;
-  padding:14px 0;font-size:.8rem;letter-spacing:.1em;
-}
-.mt-list{
-  background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
-  font-family:var(--mono);font-size:.82rem;color:var(--ink);display:flex;flex-direction:column;gap:10px;
-}
-.mt-list span{display:flex;align-items:center}
-.mt-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);display:inline-block;margin-right:10px;flex:none}
-@media(max-width:900px){.menu-teaser{grid-template-columns:1fr;gap:36px}}
 
 /* App store badges */
 .store-badges{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
