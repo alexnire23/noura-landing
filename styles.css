@@ -424,7 +424,9 @@ footer .logo{color:var(--cream)}
 .app-shots{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:48px}
 .phone-frame{width:220px;margin:0}
 .phone-frame img{
-  display:block;width:100%;border-radius:26px;border:6px solid var(--dark);
+  display:block;width:100%;
+  aspect-ratio:946/1915;object-fit:cover;object-position:bottom;
+  border-radius:26px;border:6px solid var(--dark);
   box-shadow:0 24px 60px -24px rgba(27,48,33,.35);
 }
 .phone-frame figcaption{
